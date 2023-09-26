@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" data-scrollable>
+	@@include('htm/components/head.htm',{
+		"title":"Музей 4-го сектора обороны Севастополя / Цифровой архив",
+		"stylesheets":"<link rel='stylesheet' href='libs/fancybox/fancybox.min.css'><link rel='stylesheet' href='libs/swiper-9.2.3/swiper-bundle.min.css'><link rel='stylesheet' href='css/common.min.css'><link rel='stylesheet' href='css/gallery.min.css'>",
+		"scripts":"<script defered src='libs/jquery-3.6.2.min.js'></script><script defered src='libs/fancybox/fancybox.umd.js'></script><script defered src='libs/mustache.js'></script><script defered src='libs/swiper-9.2.3/swiper-bundle.min.js'></script><script defered src='js/gallery.min.js'></script>"
+	})
+	<body>
+		@@include('htm/pages/gallery/header.htm',{})
+		@@include('htm/pages/gallery/main.htm',{"className":"page__main"})
+		@@include('htm/components/footer.htm',{"className":"page__footer"})
+		@@include('htm/components/shared-drawers.htm',{})
+	</body>
+</html>

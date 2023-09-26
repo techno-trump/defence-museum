@@ -43,9 +43,7 @@ const config = {
 		type: 'filesystem'
 	},
 	optimization: {
-		minimizer: [new TerserPlugin({
-			extractComments: false,
-		})],
+		minimize: true,
 	},
 	entry: getEntryPoints(paths.src),
 	output: {
@@ -55,6 +53,18 @@ const config = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.m?js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							['@babel/preset-env', { targets: "> 0.25%, not dead" }]
+						]
+					}
+				}
+			},
 			{
 				test: /\.(scss|css)$/,
 				use: [
@@ -129,12 +139,12 @@ const config = {
 					noErrorOnMissing: true
 				},
 				{
-					from: `${srcFolder}/bundles/js`, to: `./libs`,
+					from: `${srcFolder}/libs`, to: `./libs`,
 					noErrorOnMissing: true,
 					force: true
 				},
 				{
-					from: `${srcFolder}/bundles/css`, to: `../css`,
+					from: `${srcFolder}/media`, to: `./media`,
 					noErrorOnMissing: true,
 					force: true
 				}

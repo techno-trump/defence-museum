@@ -1,0 +1,28 @@
+<main class="@@className">
+	<!-- Sections -->
+	<section class="audio-guide page__audio-guide">
+		<div class="section-container audio-guide__wrap">
+			<h2 class="audio-guide__title">Аудиогид</h2>
+			<div class="audio-guide__text">Выберите аудио для интересующего вас экспоната ... :</div>
+			<ul id="track-list" class="audio-guide__list">
+			</ul>
+		</div>
+	</section>
+	<script type="text/template" id="audioguide-list-items-template">
+		{{#tracks}}
+			<li>
+				<a href="audio-guide-player.html?track-id={{trackId}}" class="audio-guide-track">
+					<img src="{{imgThumbUrl}}" alt="{{imgThumbUrl}}" class="audio-guide-track__img">
+					<div class="audio-guide-track__title">{{name}}</div>
+					<div class="audio-guide-track__btn">
+						<svg class="icon" viewbox="0 0 32 32">
+							<use xlink:href='@img/icons/icons.svg#player-playback'></use>
+						</svg>
+					</div>
+				</a>
+			</li>
+		{{/tracks}}
+	</script>
+</main>
+
+

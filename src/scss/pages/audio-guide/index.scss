@@ -1,0 +1,75 @@
+@use "sass:math";
+@import "../../common/config.scss";
+
+// Базовая разметка страницы
+.page {
+	&__main {
+		display: flex;
+		flex-direction: column;
+	}
+	&__audio-guide {
+		flex: 1 auto;
+	}
+}
+.audio-guide {
+	color: $--white;
+	background-color: $--mainBgBlack;
+	&__wrap {
+		max-width: 600px;
+		padding-top: 105px;
+		padding-bottom: 30px;
+		@media (max-width: 360px) {
+			padding-top: 130px;
+		}
+	}
+	&__title {
+		font-size: 26px;
+		font-weight: 700;
+		line-height: 30px;
+		letter-spacing: 0.01em;
+		margin-bottom: 20px;
+	}
+	&__text {
+		font-size: 20px;
+		line-height: 29px;
+		letter-spacing: 0.01em;
+		margin-bottom: 30px;
+	}
+	&__list {
+		display: grid;
+		gap: 20px;
+	}
+}
+.audio-guide-track {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 10px;
+	align-items: center;
+	&__img {
+		width: 40px;
+		height: 40px;
+		object-fit: cover;
+	}
+	&__title {
+		font-size: 20px;
+		line-height: 24px;
+		letter-spacing: 0.01em;
+		transition: color 0.4s;
+	}
+	&:hover &__title {
+		color: $--hoverBlue;
+	}
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 27.5px;
+		height: 27.5px;
+		background-color: $--white;
+		border-radius: 50%;
+		& > .icon {
+			fill: $--black;
+			width: 15px;
+		}
+	}
+}

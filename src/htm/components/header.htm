@@ -1,0 +1,36 @@
+<header class="header @@className">
+	<div class="section-container header__wrap">
+		<div class="header__group">
+			<h1 class="header__title">Музей 4-го сектора<br>обороны Севастополя</h1>
+			<button type="button" class="header__menu-btn burger-btn" data-drawer-toggle="main-menu">
+				<span class="burger-btn__icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+		</div>
+		<section class="mob-main-menu header__mob-menu" data-drawer="main-menu" data-scrollable>
+			<div class="mob-main-menu__panel" data-drawer-panel>
+				<div class="mob-main-menu__top">
+					<div class="mob-main-menu__top-inner">
+						<nav class="header__nav header-nav">
+							<ul>
+								<li><a href="/#virtualMuseum" class="header-link hoverable">Виртуальный музей</a></li>
+								<li><a href="/#youtubeContainer" class="header-link hoverable">Видеоэкскурсия 360</a></li>
+								<li><a href="gallery.html" class="header-link hoverable">Цифровой архив</a></li>
+								<li><a href="/#aboutRectangle" class="header-link hoverable">О музее</a></li>
+								<li class="header-nav__item_pc-hidden"><a href="audio-guide.html" class="header-link hoverable">Аудиогид</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mob-main-menu__bottom">
+					<div class="mob-main-menu__bottom-inner">
+						@@include('footer.htm',{"className":"footer_dark"})
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</header>

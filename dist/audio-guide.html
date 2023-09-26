@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-scrollable>
+
+<head>
+	<title>Музей 4-го сектора обороны Севастополя / Аудиогид</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel='stylesheet' href='css/common.min.css?_v=20230601162043'>
+	<link rel='stylesheet' href='css/audio-guide.min.css?_v=20230601162043'>
+
+	<!-- Libs and Common scripts -->
+	<script defered src='libs/tua-bsl.umd.js?_v=20230601162043'></script>
+	<script defered src='js/common.min.js?_v=20230601162043'></script>
+
+	<!-- Page scripts -->
+	<script defered src='libs/jquery-3.6.2.min.js?_v=20230601162043'></script>
+	<script defered src='libs/mustache.js?_v=20230601162043'></script>
+	</script>
+	<script defered src='js/audio-guide.min.js?_v=20230601162043'></script>
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Arimo:regular,700);
+	</style>
+	<!-- <script>
+		window.onerror = function(message, url, line, col, errorObj) {
+			console.log(`${message}\n${url}, ${line}:${col}`, errorObj);
+		};
+	</script> -->
+</head>
+
+<body>
+	<header class="header ">
+		<div class="section-container header__wrap">
+			<div class="header__group">
+				<h1 class="header__title">Музей 4-го сектора<br>обороны Севастополя</h1>
+				<button type="button" class="header__menu-btn burger-btn" data-drawer-toggle="main-menu">
+					<span class="burger-btn__icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</button>
+			</div>
+			<section class="mob-main-menu header__mob-menu" data-drawer="main-menu" data-scrollable>
+				<div class="mob-main-menu__panel" data-drawer-panel>
+					<div class="mob-main-menu__top">
+						<div class="mob-main-menu__top-inner">
+							<nav class="header__nav header-nav">
+								<ul>
+									<li><a href="/#virtualMuseum" class="header-link hoverable">Виртуальный музей</a></li>
+									<li><a href="/#youtubeContainer" class="header-link hoverable">Видеоэкскурсия 360</a></li>
+									<li><a href="gallery.html" class="header-link hoverable">Цифровой архив</a></li>
+									<li><a href="/#aboutRectangle" class="header-link hoverable">О музее</a></li>
+									<li class="header-nav__item_pc-hidden"><a href="audio-guide.html" class="header-link hoverable">Аудиогид</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="mob-main-menu__bottom">
+						<div class="mob-main-menu__bottom-inner">
+							<footer class="footer footer_dark">
+								<div class="footer__wrap">
+									<div class="footer__inner">
+										<div class="footer__block footer-block">
+											<h3 class="footer-block__title">контакты:</h3>
+											<dl class="footer-block__list footer-block__list_left">
+												<div>
+													<dt>Адрес:</dt>
+													<dd>г. Севастополь, с. Верхнесадовое, <br>ул. Севастопольская, 82</dd>
+												</div>
+												<div>
+													<dt>Бронирование экскурсий:</dt>
+													<dd><a href="tel:+78692729594" class="footer-link hoverable">+7&nbsp;(8692)&nbsp;729-594</a></dd>
+												</div>
+												<div>
+													<dt>Социальные сети:</dt>
+													<dd><a href="https://vk.com/dk.vsadovoe1960" class="footer-link footer-link_underlined hoverable">https://vk.com/dk.vsadovoe1960</a></dd>
+												</div>
+											</dl>
+										</div>
+										<div class="footer__block footer-block">
+											<h3 class="footer-block__title">РЕЖИМ РАБОТЫ МУЗЕЯ:</h3>
+											<dl class="footer-block__list footer-block__list_right">
+												<dt>Открыто:</dt>
+												<dd>
+													<div class="footer-schedule">
+														<div class="footer-schedule__hours">10:00 - 18:00</div>
+														Среда, четверг, пятница, суббота, воскресенье
+													</div>
+												</dd>
+												<dt>Выходной:</dt>
+												<dd>Понедельник, вторник</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</footer>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</header>
+	<main class="page__main">
+		<!-- Sections -->
+		<section class="audio-guide page__audio-guide">
+			<div class="section-container audio-guide__wrap">
+				<h2 class="audio-guide__title">Аудиогид</h2>
+				<div class="audio-guide__text">Выберите аудио для интересующего вас экспоната ... :</div>
+				<ul id="track-list" class="audio-guide__list">
+				</ul>
+			</div>
+		</section>
+		<script type="text/template" id="audioguide-list-items-template">
+			{{#tracks}}
+				<li>
+					<a href="audio-guide-player.html?track-id={{trackId}}" class="audio-guide-track">
+						<img src="{{imgThumbUrl}}" alt="{{imgThumbUrl}}" class="audio-guide-track__img">
+						<div class="audio-guide-track__title">{{name}}</div>
+						<div class="audio-guide-track__btn">
+							<svg class="icon" viewbox="0 0 32 32">
+								<use xlink:href='img/icons/icons.svg#player-playback'></use>
+							</svg>
+						</div>
+					</a>
+				</li>
+			{{/tracks}}
+		</script>
+	</main>
+
+
+
+	<footer class="footer footer_dark">
+		<div class="footer__wrap">
+			<div class="footer__inner">
+				<div class="footer__block footer-block">
+					<h3 class="footer-block__title">контакты:</h3>
+					<dl class="footer-block__list footer-block__list_left">
+						<div>
+							<dt>Адрес:</dt>
+							<dd>г. Севастополь, с. Верхнесадовое, <br>ул. Севастопольская, 82</dd>
+						</div>
+						<div>
+							<dt>Бронирование экскурсий:</dt>
+							<dd><a href="tel:+78692729594" class="footer-link hoverable">+7&nbsp;(8692)&nbsp;729-594</a></dd>
+						</div>
+						<div>
+							<dt>Социальные сети:</dt>
+							<dd><a href="https://vk.com/dk.vsadovoe1960" class="footer-link footer-link_underlined hoverable">https://vk.com/dk.vsadovoe1960</a></dd>
+						</div>
+					</dl>
+				</div>
+				<div class="footer__block footer-block">
+					<h3 class="footer-block__title">РЕЖИМ РАБОТЫ МУЗЕЯ:</h3>
+					<dl class="footer-block__list footer-block__list_right">
+						<dt>Открыто:</dt>
+						<dd>
+							<div class="footer-schedule">
+								<div class="footer-schedule__hours">10:00 - 18:00</div>
+								Среда, четверг, пятница, суббота, воскресенье
+							</div>
+						</dd>
+						<dt>Выходной:</dt>
+						<dd>Понедельник, вторник</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>

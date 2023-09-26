@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" data-scrollable>
+	@@include('htm/components/head.htm',{
+		"title":"Музей 4-го сектора обороны Севастополя / Аудиогид",
+		"stylesheets":"<link rel='stylesheet' href='css/common.min.css'><link rel='stylesheet' href='css/audio-guide-player.min.css'>",
+		"scripts":"<script defered src='libs/jquery-3.6.2.min.js'></script><script defered src='libs/mustache.js'></script></script><script defered src='js/audio-guide-player.min.js'></script>"
+	})
+	<body>
+		@@include('htm/components/header.htm',{})
+		@@include('htm/pages/audio-guide-player/main.htm',{"className":"page__main"})
+		@@include('htm/components/footer.htm',{"className":"footer_dark"})
+		@@include('htm/components/shared-drawers.htm',{})
+	</body>
+</html>

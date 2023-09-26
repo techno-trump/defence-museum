@@ -1,0 +1,93 @@
+<main class="@@className">
+	<!-- Sections -->
+	<section class="gallery">
+		<div class="section-container gallery__wrap">
+			<div class="gallery__nav-slider-area">
+				<div class="gallery-slider gallery-slider_nav">
+					<div class="gallery-slider__inner">
+						<div id="nav-slider-prev-btn" class="slider-btn slider-btn_prev slider-btn_mob-small gallery-slider__prev-btn">
+							<svg class="slider-btn__icon" viewbox="0 0 8 12">
+								<use xlink:href='@img/icons/icons.svg#90deg-arrow-left'></use>
+							</svg>
+						</div>
+						<div id="nav-slider" class="gallery-slider__body swiper">
+							<div class="swiper-wrapper gallery-slider__wrapper">
+							</div>
+						</div>
+						<div id="nav-slider-next-btn" class="slider-btn slider-btn_next slider-btn_mob-small gallery-slider__next-btn">
+							<svg class="slider-btn__icon" viewbox="0 0 8 12">
+								<use xlink:href='@img/icons/icons.svg#90deg-arrow-right'></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="gallery-slider gallery-slider_main gallery__main-slider">
+				<div class="gallery-slider__inner">
+					<div id="main-slider-prev-btn" class="slider-btn slider-btn_prev gallery-slider__prev-btn">
+						<svg class="slider-btn__icon" viewbox="0 0 8 12">
+							<use xlink:href='@img/icons/icons.svg#90deg-arrow-left'></use>
+						</svg>
+					</div>
+					<div id="main-slider" class="gallery-slider__body swiper">
+						<div class="swiper-wrapper">
+						</div>
+					</div>
+					<div id="main-slider-next-btn" class="slider-btn slider-btn_next gallery-slider__next-btn">
+						<svg class="slider-btn__icon" viewbox="0 0 8 12">
+							<use xlink:href='@img/icons/icons.svg#90deg-arrow-right'></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="gallery-slider gallery-slider_thumbs gallery__thumbs-slider">
+				<div class="gallery-slider__inner">
+					<div id="thumbs-slider-prev-btn" class="slider-btn slider-btn_prev slider-btn_mob-small gallery-slider__prev-btn">
+						<svg class="slider-btn__icon" viewbox="0 0 8 12">
+							<use xlink:href='@img/icons/icons.svg#90deg-arrow-left'></use>
+						</svg>
+					</div>
+					<div id="thumbs-slider" class="gallery-slider__body swiper">
+						<div class="swiper-wrapper gallery-slider__wrapper">
+						</div>
+					</div>
+					<div id="thumbs-slider-next-btn" class="slider-btn slider-btn_next slider-btn_mob-small gallery-slider__next-btn">
+						<svg class="slider-btn__icon" viewbox="0 0 8 12">
+							<use xlink:href='@img/icons/icons.svg#90deg-arrow-right'></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/template" id="nav-gallery-content-template">
+		{{#folders}}
+			<div data-idx="{{idx}}" class="swiper-slide gallery-slider__slide gallery-folder-select">
+				{{folderName}}
+			</div>
+		{{/folders}}
+	</script>
+	<script type="text/template" id="main-gallery-content-template">
+		{{#images}}
+			<a href="{{mainUrl}}" data-fancybox="my-gallery" data-caption="{{name}}" class="swiper-slide gallery-slider__slide main-gallery-slide">
+				<div class="main-gallery-slide__wrap">
+					<div class="main-gallery-slide__img-area">
+						<div class="main-gallery-slide__img-wrap">
+							<img src="{{mainUrl}}" alt="{{mainUrl}}" loading="lazy">
+						</div>
+					</div>
+					<span>{{name}}</span>
+				</div>
+			</a>
+		{{/images}}
+	</script>
+	<script type="text/template" id="main-gallery-thumbs-content-template">
+		{{#images}}
+			<div class="swiper-slide gallery-slider__slide gallery-slider-thumb">
+				<img src="{{thumbUrl}}" alt="{{thumbUrl}}" loading="lazy">
+			</div>
+		{{/images}}
+	</script>
+</main>
+
+

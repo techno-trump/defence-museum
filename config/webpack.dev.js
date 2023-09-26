@@ -91,8 +91,8 @@ const config = {
 				test: /\.(scss|css)$/,
 				exclude: `${paths.src}/fonts`,
 				use: [
-					//'style-loader',
-					MiniCssExtractPlugin.loader,
+					'style-loader',
+					//MiniCssExtractPlugin.loader,
 					{
 						loader: 'string-replace-loader',
 						options: {
@@ -164,15 +164,15 @@ const config = {
 					noErrorOnMissing: true
 				},
 				{
-					from: `${srcFolder}/bundles/js`, to: `js/libs`,
+					from: `${srcFolder}/libs`, to: `./libs`,
 					noErrorOnMissing: true,
 					force: true
 				},
 				{
-					from: `${srcFolder}/bundles/css`, to: `css/libs`,
+					from: `${srcFolder}/media`, to: `./media`,
 					noErrorOnMissing: true,
 					force: true
-				},
+				}
 			],
 		}),
 	],

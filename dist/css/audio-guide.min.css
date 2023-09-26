@@ -1,0 +1,73 @@
+.page__main {
+  display: flex;
+  flex-direction: column;
+}
+.page__audio-guide {
+  flex: 1 auto;
+}
+
+.audio-guide {
+  color: white;
+  background-color: #121212;
+}
+.audio-guide__wrap {
+  max-width: 600px;
+  padding-top: 105px;
+  padding-bottom: 30px;
+}
+@media (max-width: 360px) {
+  .audio-guide__wrap {
+    padding-top: 130px;
+  }
+}
+.audio-guide__title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+}
+.audio-guide__text {
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.01em;
+  margin-bottom: 30px;
+}
+.audio-guide__list {
+  display: grid;
+  gap: 20px;
+}
+
+.audio-guide-track {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+.audio-guide-track__img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.audio-guide-track__title {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  transition: color 0.4s;
+}
+.audio-guide-track:hover .audio-guide-track__title {
+  color: #0078FF;
+}
+.audio-guide-track__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27.5px;
+  height: 27.5px;
+  background-color: white;
+  border-radius: 50%;
+}
+.audio-guide-track__btn > .icon {
+  fill: black;
+  width: 15px;
+}

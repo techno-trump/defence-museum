@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "../../common/config.scss";
+@import "../../components/audio-player.scss";
+
+// Базовая разметка страницы
+.page {
+	&__audio-guide-player {
+		padding-top: 105px;
+		padding-bottom: 30px;
+		@media (max-width: 360px) {
+			padding-top: 130px;
+		}
+	}
+}
